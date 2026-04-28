@@ -1,22 +1,36 @@
-import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
 
 export default function AppLayout() {
   return (
     <>
-      <div className='bg-gray-300'>
-            <div>
-                <h1>Este es un layout</h1>
-            </div>
-            <div>
-                <Outlet/>
-            </div>
-            <div className='bg-amber-100 flex flexrow gap-x-5'>
-                 <Link to={'/custom'} className='text-black font-bold hover:underline hover:text-blue-600'>
-                    Custom desde layout
-                </Link>
-            </div>
+      <div className="bg-gray-200 flex flex-col h-dvh">
+
+        {/* HEADER */}
+        <div className="bg-amber-100 h-20 border-b text-center flex items-center justify-center">
+          <h1>HEADER PRRON</h1>
+        </div>
+
+        {/* CONTENIDO */}
+        <div className="flex-1">
+          <Outlet />
+        </div>
+
+        {/* FOOTER */}
+        <footer className="bg-amber-100 text-center py-4 flex flex-col gap-y-4">
+          <p>footer prron</p>
+
+          <div className="flex justify-center gap-x-5">
+            <Link to="/main" className="hover:underline">
+              MAIN
+            </Link>
+            <Link to="/otra" className="hover:underline">
+              OTRA
+            </Link>
+          </div>
+        </footer>
+
       </div>
     </>
-  )
+  );
 }

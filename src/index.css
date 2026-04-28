@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@layer components {
+    .button-simple {
+        @apply px-4 py-2 bg-blue-300 text-black rounded border-b-cyan-950 border-2 flex flex-col items-center;
+    }
+
+    .li {
+        @apply text-shadow-slate-50;
+    }
+ }
